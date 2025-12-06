@@ -1,65 +1,134 @@
-import Image from "next/image";
+"use client"
+
+import Link from "next/link"
+import { HomeIcon, MailIcon } from "lucide-react"
+
+import { FaWhatsapp, FaLinkedin, FaGithub } from 'react-icons/fa'
+import { Dock, DockIcon } from "@/components/ui/dock"
+import { ThemeToggle } from "@/components/theme-toggle"
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/components/ui/tooltip"
+import { Separator } from "@/components/ui/separator"
+import { buttonVariants } from "@/components/ui/button"
+import { cn } from "@/lib/utils"
+
+const DATA = {
+  navbar: [
+    { href: "#", icon: HomeIcon, label: "Home" }
+  ],
+  Contact: {
+    social: {
+      whatsapp: {
+        name: "WhatsApp",
+        url: "https://wa.me/5511967072184?text=Ol%C3%A1%2C%20sou%20Alexsandro%20Desenvolvedor%20Web%20Full%20Stack%20fale%20comigo%20no%20WhatsApp...%20",
+        icon: FaWhatsapp,
+      },
+      github: {
+        name: "GitHub",
+        url: "https://github.com/alx-8914",
+        icon: FaGithub,
+      },
+      linkedin: {
+        name: "LinkedIn",
+        url: "https://www.linkedin.com/in/alexsandro-da-silva-developer",
+        icon: FaLinkedin,
+      },
+      email: {
+        name: "Email",
+        url: "mailto:alexdevsilva@gmail.com",
+        icon: MailIcon,
+      },
+    },
+  }
+}
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
+    <div className="relative min-h-screen flex flex-col items-center justify-center text-center">
+      <span className="pointer-events-none bg-linear-to-b from-zinc-950 via-zinc-700 to-zinc-400 bg-clip-text text-center text-8xl leading-none font-extrabold tracking-tight whitespace-pre-wrap text-transparent dark:from-zinc-50 dark:via-zinc-300 dark:to-zinc-500 drop-shadow-[0_0_25px_rgba(0,0,0,0.55)] dark:drop-shadow-[0_0_25px_rgba(0,0,0,0.9)]">
+        Hi, I'm Alex!
+      </span>
+      <div className="mt-8 flex flex-col items-center gap-4">
+        <h2 className="w-full max-w-4xl text-left text-foreground text-4xl font-semibold">
+          About
+        </h2>
+        <h3 className="w-full max-w-4xl text-left text-foreground text-xl leading-relaxed">
+          Olá! Meu nome é Alexsandro da Silva,
+          tenho 43 anos e sou um Desenvolvedor FullStack e  sou apaixonado por desenvolver aplicações e soluções Web´s digitais que impactam positivamente a vida das pessoas trazendo uma experiência incrível ao usuário.
+          Com mais de 1 ano de experiência em desenvolvimento web, tenho trabalhado com tecnologias como descrevo em minhas habilidades logo abaixo e buscando sempre entregar projetos de alta qualidade e performance.
+          Além do Desenvolvimento, atualmente trabalho em outra área e sigo na minha nova transição de carreira, sou entusiasta de boas práticas de código, arquitetura de software e experiência do usuário (UX/UI). Estou sempre em busca de novos desafios e oportunidades para aprender e crescer profissionalmente.
+        </h3>
+      </div>
+      <TooltipProvider>
+        <Dock
+          className="bg-zinc-100/95 dark:bg-zinc-900/95 border border-border/60 rounded-2xl shadow-lg backdrop-blur px-2"
+          iconMagnification={80}
+          iconDistance={140}
+        >
+          {DATA.navbar.map((item) => (
+            <DockIcon key={item.label}>
+              <Tooltip>
+                <TooltipTrigger asChild>
+                  <Link
+                    href={item.href}
+                    aria-label={item.label}
+                    className={cn(
+                      buttonVariants({ variant: "ghost", size: "icon" }),
+                      "size-12 rounded-full bg-transparent hover:bg-zinc-200/80 dark:hover:bg-zinc-800/80"
+                    )}
+                  >
+                    <item.icon className="w-6 h-6 text-zinc-950 dark:text-zinc-50 drop-shadow-sm" />
+                  </Link>
+                </TooltipTrigger>
+                <TooltipContent>
+                  <p>{item.label}</p>
+                </TooltipContent>
+              </Tooltip>
+            </DockIcon>
+          ))}
+          {Object.entries(DATA.Contact.social).map(([key, social]) => (
+            <DockIcon key={key}>
+              <Tooltip>
+                <TooltipTrigger asChild>
+                  <Link
+                    href={social.url}
+                    aria-label={social.name}
+                    target={key !== "email" ? "_blank" : undefined}
+                    rel={key !== "email" ? "noopener noreferrer" : undefined}
+                    className={cn(
+                      buttonVariants({ variant: "ghost", size: "icon" }),
+                      "size-12 rounded-full bg-transparent hover:bg-zinc-200/80 dark:hover:bg-zinc-800/80"
+                    )}
+                  >
+                    <social.icon className="w-6 h-6 text-zinc-950 dark:text-zinc-50 drop-shadow-sm" />
+                  </Link>
+                </TooltipTrigger>
+                <TooltipContent>
+                  <p>{social.name}</p>
+                </TooltipContent>
+              </Tooltip>
+            </DockIcon>
+          ))}
+          <Separator
+            orientation="vertical"
+            className="mx-1 h-8 w-px bg-zinc-400/70 dark:bg-zinc-500/80"
+          />
+          <DockIcon>
+            <Tooltip>
+              <TooltipTrigger asChild>
+                <ThemeToggle asIcon />
+              </TooltipTrigger>
+              <TooltipContent>
+                <p>Toggle Theme</p>
+              </TooltipContent>
+            </Tooltip>
+          </DockIcon>
+        </Dock>
+      </TooltipProvider>
     </div>
-  );
+  )
 }
