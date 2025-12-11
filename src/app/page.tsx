@@ -14,7 +14,12 @@ import {
 } from "@/components/ui/tooltip"
 import { Separator } from "@/components/ui/separator"
 import { buttonVariants } from "@/components/ui/button"
-import { cn } from "@/lib/utils"
+import { cn, smoothScrollTo } from "@/lib/utils"
+import { ProjectsSection } from "@/components/sections/projects"
+import { HeroSection } from "@/components/sections/hero"
+import { AboutSection } from "@/components/sections/about"
+import { SkillsSection } from "@/components/sections/skills"
+import { ContactSection } from "@/components/sections/contact"
 
 const DATA = {
   navbar: [
@@ -48,24 +53,17 @@ const DATA = {
 
 export default function Home() {
   return (
-    <div className="relative min-h-screen flex flex-col items-center justify-center text-center">
-      <span className="pointer-events-none bg-linear-to-b from-zinc-950 via-zinc-700 to-zinc-400 bg-clip-text text-center text-8xl leading-none font-extrabold tracking-tight whitespace-pre-wrap text-transparent dark:from-zinc-50 dark:via-zinc-300 dark:to-zinc-500 drop-shadow-[0_0_25px_rgba(0,0,0,0.55)] dark:drop-shadow-[0_0_25px_rgba(0,0,0,0.9)]">
-        Hi, I'm Alex!
-      </span>
-      <div className="mt-8 flex flex-col items-center gap-4">
-        <h2 className="w-full max-w-4xl text-left text-foreground text-4xl font-semibold">
-          About
-        </h2>
-        <h3 className="w-full max-w-4xl text-left text-foreground text-xl leading-relaxed">
-          Olá! Meu nome é Alexsandro da Silva,
-          tenho 43 anos e sou um Desenvolvedor FullStack e  sou apaixonado por desenvolver aplicações e soluções Web´s digitais que impactam positivamente a vida das pessoas trazendo uma experiência incrível ao usuário.
-          Com mais de 1 ano de experiência em desenvolvimento web, tenho trabalhado com tecnologias como descrevo em minhas habilidades logo abaixo e buscando sempre entregar projetos de alta qualidade e performance.
-          Além do Desenvolvimento, atualmente trabalho em outra área e sigo na minha nova transição de carreira, sou entusiasta de boas práticas de código, arquitetura de software e experiência do usuário (UX/UI). Estou sempre em busca de novos desafios e oportunidades para aprender e crescer profissionalmente.
-        </h3>
+    <div className="relative min-h-screen flex flex-col items-center justify-center text-center pb-24">
+      <div className="mt-8 flex flex-col items-center gap-2'  ">
+        <HeroSection />
+        <AboutSection />
+        <SkillsSection />
       </div>
+      <ProjectsSection />
+        <ContactSection />
       <TooltipProvider>
         <Dock
-          className="bg-zinc-100/95 dark:bg-zinc-900/95 border border-border/60 rounded-2xl shadow-lg backdrop-blur px-2"
+          className="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 bg-white/95 dark:bg-zinc-900/95 border border-zinc-200 dark:border-zinc-800 rounded-2xl shadow-lg backdrop-blur-md px-2"
           iconMagnification={80}
           iconDistance={140}
         >
@@ -76,6 +74,10 @@ export default function Home() {
                   <Link
                     href={item.href}
                     aria-label={item.label}
+                    onClick={(e) => {
+                      e.preventDefault()
+                      smoothScrollTo(item.href)
+                    }}
                     className={cn(
                       buttonVariants({ variant: "ghost", size: "icon" }),
                       "size-12 rounded-full bg-transparent hover:bg-zinc-200/80 dark:hover:bg-zinc-800/80"
