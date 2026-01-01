@@ -1,14 +1,14 @@
 // src/components/sections/contact.tsx
 
-import { Mail, Github, Linkedin, Instagram } from "lucide-react"
-import { contactData } from "@/data/contact"
+import { Mail, Github, Linkedin, Instagram } from "lucide-react";
+import { contactData } from "@/data/contact";
 
 type ContactLink = {
-  label: string
-  href: string
-  icon: React.ComponentType<{ className?: string }>
-  isExternal?: boolean
-}
+  label: string;
+  href: string;
+  icon: React.ComponentType<{ className?: string }>;
+  isExternal?: boolean;
+};
 
 export function ContactSection() {
   const contactLinks: ContactLink[] = [
@@ -36,22 +36,22 @@ export function ContactSection() {
       icon: Instagram,
       isExternal: true,
     },
-  ]
+  ];
 
   const linkClassName =
-    "inline-flex items-center justify-center gap-2 rounded-xl border border-border px-6 py-3 font-medium transition-all duration-200 hover:scale-105 hover:bg-green-400 hover:text-white dark:hover:bg-green-300 dark:hover:text-black"
+    "inline-flex w-full sm:w-auto items-center justify-center gap-2 rounded-xl border border-border px-6 py-3 font-medium transition-all duration-200 hover:scale-105 hover:bg-green-400 hover:text-white dark:hover:bg-green-300 dark:hover:text-black";
 
   return (
     <section id="contact" className="py-24">
       <h2 className="text-3xl font-bold">{contactData.title}</h2>
 
-      <p className="mt-4 text-muted-foreground max-w-2xl">
+      <p className="mt-4 text-muted-foreground max-w-2xl mx-auto">
         {contactData.description}
       </p>
 
       <div className="mt-10 flex flex-col items-center sm:flex-row gap-6">
         {contactLinks.map((link) => {
-          const Icon = link.icon
+          const Icon = link.icon;
           return (
             <a
               key={link.label}
@@ -61,12 +61,12 @@ export function ContactSection() {
               aria-label={`Abrir ${link.label}`}
               className={linkClassName}
             >
-              <Icon className="h-4 w-4" />
+              <Icon className="h-4 w-4 sm:h-5 sm:w-5" />
               {link.label}
             </a>
-          )
+          );
         })}
       </div>
     </section>
-  )
+  );
 }

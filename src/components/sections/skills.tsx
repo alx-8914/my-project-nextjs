@@ -1,34 +1,38 @@
 // src/components/sections/skills.tsx
-import { motion } from "framer-motion"
-import { fadeUp, stagger } from "@/lib/animations"
-import { skills } from "@/data/skills"
+import { motion } from "framer-motion";
+import { fadeUp, stagger } from "@/lib/animations";
+import { skills } from "@/data/skills";
 
 export function SkillsSection() {
   return (
     <motion.section
       id="skills"
-      className="py-24"
+      className="py-16 md:py-24"
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true }}
       variants={stagger}
     >
-      <motion.h2 variants={fadeUp}className="text-3xl font-bold">Habilidades</motion.h2>
+      <motion.h2 variants={fadeUp} className="text-3xl font-bold">
+        Habilidades
+      </motion.h2>
 
-      <div className="mt-10 grid gap-6 md:grid-cols-4 cursor-pointer">
-        {skills.map((skill) => (
-          <motion.div
-            variants={fadeUp}
-            key={skill.name}
-            className="border rounded-xl p-5 flex items-center justify-between"
-          >
-            <span className="font-medium">{skill.name}</span>
-            <span className="rounded-full border border-border bg-muted/40 px-4 py-1 text-xs font-medium">
-              {skill.level}
-            </span>
-          </motion.div>
-        ))}
+      <div className="mt-6">
+        <div className="container mx-auto px-6">
+          <div className="flex flex-wrap gap-2 justify-center">
+            {skills.map((skill) => (
+              <motion.div
+                variants={fadeUp}
+                key={skill.name}
+                className="inline-flex items-center gap-3 px-4 py-2 rounded-lg bg-muted/20 border border-border bg-blue-500/20 text-blue-300 text-muted-foreground hover:scale-105 transition-transform duration-200"
+              >
+                <span className="font-medium text-sm">{skill.name}</span>
+                <span className="text-xs text-muted-foreground/70">{skill.level}</span>
+              </motion.div>
+            ))}
+          </div>
+        </div>
       </div>
     </motion.section>
-  )
+  );
 }
