@@ -24,7 +24,7 @@ export const heroDataVariantB: HeroData = {
 export const heroData: HeroData = {
   name: "Alexsandro",
   title: "Desenvolvedor Full Stack",
-  subtitle:"Hi, I'm",
+  subtitle:"Olá, eu sou",
   description:
     "Transformo ideias em produtos digitais escaláveis — do protótipo ao deploy. Especialista em Next.js, TypeScript e arquitetura server-side que prioriza performance e UI/UX.",
   ctaPrimary: {

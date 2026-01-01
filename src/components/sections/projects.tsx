@@ -1,7 +1,7 @@
 // src/components/sections/projects.tsx
 
-import Image from "next/image"
-import { projects } from "@/data/projects"
+import Image from "next/image";
+import { projects } from "@/data/projects";
 
 // Este componente é responsável apenas por:
 // - Buscar os dados (projects)
@@ -68,5 +68,5 @@ export function ProjectsSection() {
         </div>
       </div>
     </section>
-  )
+  );
 }

@@ -87,6 +87,7 @@ p  { font-size: clamp(1rem, 1.2vw + 0.8rem, 1.125rem); line-height: 1.6; }
 /* Mantém pre-wrap, com quebras melhores em telas pequenas */
 #hero .whitespace-pre-wrap {
   white-space: pre-wrap;
+  -webkit-hyphens: auto;
   hyphens: auto;
 }
 

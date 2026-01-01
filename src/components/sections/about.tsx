@@ -1,6 +1,6 @@
 // src/components/sections/about.tsx
 
-import { aboutData } from "@/data/about"
+import { aboutData } from "@/data/about";
 
 export function AboutSection() {
   return (
@@ -21,14 +21,11 @@ export function AboutSection() {
 
       <div className="text-center mt-8 grid grid-cols-2 sm:grid-cols-4 gap-2 rounded-xl">
         {aboutData.highlights.map((item) => (
-          <span
-            key={item}
-            className="px-3 py-1 rounded-full text-sm bg-muted"
-          >
+          <span key={item} className="px-3 py-1 rounded-full text-sm bg-muted">
             {item}
           </span>
         ))}
       </div>
     </section>
-  )
+  );
 }

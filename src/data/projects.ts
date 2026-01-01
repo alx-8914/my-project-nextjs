@@ -47,5 +47,23 @@ export const projects: Project[] = [
     link: "https://github.com/alx-8914/imersao-devops",
     image: "/Api-gestao.png",
     imageAlt: "Interface do Gerador de Senhas"
+  },
+  {
+    id: "5",
+    title: "🤖 Agente de IA",
+    description: "Projeto de Agente de IA para agendamento de consultas odontológicas, utilizando N8N para automação de fluxos de trabalho e Docker para containerização.",
+    tech: ["Agentes de IA", "N8N", "NGROK", "Docker", "docker-compose", "Evolution-api", "github", "Dockerfile", "Docker-image",],
+    link: "https://agendamentos-clinica-eight.vercel.app/",
+    image: "/OdontoVida.png",
+    imageAlt: "Dashboard do Agente de IA para agendamento de consultas odontológicas"
+  },
+  {
+    id: "6",
+    title: "🤖Agente de IA-ShowCard",
+    description: "Projeto de Agente de IA para recomendação de cartões de crédito personalizados, utilizando N8N para automação de fluxos de trabalho e Docker para containerização.",
+    tech: ["Agentes de IA", "N8N", "NGROK", "Docker", "docker-compose", "Evolution-api", "github", "Dockerfile", "Docker-image",],
+    link: "https://chat-autoai-nu.vercel.app/",
+    image: "/whatsCar.png",
+    imageAlt: "Chatbot do Agente de IA-ShowCard"
   }
 ]

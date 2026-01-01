@@ -48,8 +48,8 @@ export function HeroSection() {
       className="container mx-auto flex flex-col items-center justify-center py-40 text-center"
     >
       <h1 className="text-4xl md:text-6xl font-bold">
-        <span className="pointer-events-none text-center text-8xl leading-none font-extrabold tracking-tight whitespace-pre-wrap">
-          <span className="bg-linear-to-b from-emerald-600 via-green-800 to-teal-700 bg-clip-text text-transparent [text-shadow:0_2px_12px_rgba(16,185,129,0.25),0_0_2px_rgba(0,0,0,0.1)] dark:from-zinc-50 dark:via-zinc-300 dark:to-zinc-500 dark:[text-shadow:0_0_25px_rgba(97,240,152,0.55)]">
+        <span className="pointer-events-none text-shadow-teal-900 text-6xl leading-none font-extrabold tracking-tight whitespace-pre-wrap">
+          <span className="bg-linear-to-b from-emerald-900 via-green-800 to-teal-900 bg-clip-text text-transparent [text-shadow:0_2px_12px_rgba(91, 7, 160, 0.25),0_0_2px_rgba(0,0,0,0.1)] dark:from-zinc-50 dark:via-zinc-300 dark:to-zinc-500 dark:[text-shadow:0_0_25px_rgba(97,240,152,0.55)]">
             {heroData.subtitle} {heroData.name.replace(/👋🏽/g, "")}
           </span>
           <span className="inline-block">👋🏽</span>
