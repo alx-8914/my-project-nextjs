@@ -66,4 +66,142 @@
     background-color: hsl(var(--background));
     color: hsl(var(--foreground));
   }
+
+
+/* =========================
+   Responsividade e tipografia fluida (sugestões)
+   ========================= */
+
+/* Tipografia fluida */
+h1 { font-size: clamp(2rem, 4vw + 1rem, 4.5rem); line-height: 1.05; }
+h2 { font-size: clamp(1.5rem, 2.5vw + 0.8rem, 3rem); line-height: 1.1; }
+p  { font-size: clamp(1rem, 1.2vw + 0.8rem, 1.125rem); line-height: 1.6; }
+
+/* Evitar overflow de texto no hero */
+#hero,
+#hero * {
+  word-break: break-word;
+  overflow-wrap: anywhere;
+}
+
+/* Mantém pre-wrap, com quebras melhores em telas pequenas */
+#hero .whitespace-pre-wrap {
+  white-space: pre-wrap;
+  hyphens: auto;
+}
+
+/* Fallback para .container (complementa container do Tailwind) */
+.container {
+  width: 100%;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (min-width: 640px) { .container { max-width: 640px; } }
+@media (min-width: 768px) { .container { max-width: 768px; } }
+@media (min-width: 1024px) { .container { max-width: 1024px; } }
+@media (min-width: 1280px) { .container { max-width: 1280px; } }
+
+/* Espaçamento vertical do hero (fallback caso não altere classes do componente) */
+#hero {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+@media (min-width: 768px) {
+  #hero {
+    padding-top: 10rem;
+    padding-bottom: 10rem;
+  }
+}
+
+/* Alvos touch mínimos */
+a, button {
+  min-height: 44px;
+  min-width: 44px;
+  touch-action: manipulation;
+}
+
+/* Classe utilitária opcional para títulos muito grandes */
+.fluid-hero-title {
+  font-size: clamp(1.5rem, 6vw, 5.5rem);
+  line-height: 1;
+}
+
+  /* Tipografia fluida */
+  h1 {
+    font-size: clamp(1rem, 2vw + 1rem, 4.5rem);
+    line-height: 1.05;
+  }
+
+  h2 {
+    font-size: clamp(1.5rem, 2.5vw + 0.8rem, 3rem);
+    line-height: 1.1;
+  }
+
+  p {
+    font-size: clamp(1rem, 1.2vw + 0.8rem, 1.125rem);
+    line-height: 1.6;
+  }
+}
+
+/* Preferível: ajustar classes no componente (ex: py-24 md:py-40).
+   Caso não queira tocar no componente, usar fallback CSS: */
+#hero {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+@media (min-width: 768px) {
+  #hero {
+    padding-top: 10rem;
+    padding-bottom: 10rem;
+  }
+}
+
+a, button {
+  min-height: 44px;
+  min-width: 44px;
+  touch-action: manipulation;
+}
+
+/* Fallback para .container (complementa o container do Tailwind) */
+.container {
+  width: 100%;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (min-width: 640px) {
+  .container {
+    max-width: 640px;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 768px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    max-width: 1024px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .container {
+    max-width: 1280px;
+  }
+}
+
+/* Classe utilitária opcional — use no lugar de text-8xl em spans críticos */
+.fluid-hero-title {
+  font-size: clamp(1.5rem, 6vw, 5.5rem);
+  line-height: 1;
 }
