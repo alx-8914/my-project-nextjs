@@ -18,16 +18,19 @@ export function SkillsSection() {
       </motion.h2>
 
       <div className="mt-10">
-        <div className="flex flex-wrap gap-4">
-          {skills.map((skill) => (
-            <motion.div
-              variants={fadeUp}
-              key={skill.name}
-              className="inline-flex items-center gap-3 px-4 py-2 rounded-lg bg-muted/20 text-primary hover:scale-105 transition-transform duration-200">
-              <span className="font-medium text-sm">{skill.name}</span>
-              <span className="text-xs text-muted-foreground/70">{skill.level}</span>
-            </motion.div>
-          ))}
+        <div className="container mx-auto px-6">
+          <div className="flex flex-wrap gap-4 justify-center">
+            {skills.map((skill) => (
+              <motion.div
+                variants={fadeUp}
+                key={skill.name}
+                className="inline-flex items-center gap-3 px-4 py-2 rounded-lg bg-muted/20 border border-border text-muted-foreground hover:scale-105 transition-transform duration-200"
+              >
+                <span className="font-medium text-sm">{skill.name}</span>
+                <span className="text-xs text-muted-foreground/70">{skill.level}</span>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </div>
     </motion.section>
