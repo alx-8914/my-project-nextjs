@@ -7,22 +7,22 @@ export function SkillsSection() {
   return (
     <motion.section
       id="skills"
-      className="py-24"
+      className="py-16 md:py-24"
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true }}
       variants={stagger}
     >
-      <motion.h2 variants={fadeUp}className="text-3xl font-bold">Habilidades</motion.h2>
+      <motion.h2 variants={fadeUp} className="text-3xl font-bold">Habilidades</motion.h2>
 
-      <div className="mt-10 grid gap-6 md:grid-cols-4 cursor-pointer">
+      <div className="mt-10 grid gap-6 grid-cols-1 sm:grid-cols-2 md:grid-cols-4 cursor-pointer">
         {skills.map((skill) => (
           <motion.div
             variants={fadeUp}
             key={skill.name}
-            className="border rounded-xl p-5 flex items-center justify-between"
+            className="border rounded-xl p-5 flex items-center justify-between min-h-[56px] overflow-hidden"
           >
-            <span className="font-medium">{skill.name}</span>
+            <span className="font-medium truncate">{skill.name}</span>
             <span className="rounded-full border border-border bg-muted/40 px-4 py-1 text-xs font-medium">
               {skill.level}
             </span>
