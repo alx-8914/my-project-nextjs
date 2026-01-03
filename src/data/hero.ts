@@ -29,7 +29,7 @@ export const heroData: HeroData = {
     "Transformo ideias em produtos digitais escaláveis — do protótipo ao deploy. Especialista em Next.js, TypeScript e arquitetura server-side que prioriza performance e UI/UX.",
   ctaPrimary: {
     text: "Baixar CV",
-    link: "/CurricullumDev.pdf",
+    link: "/Curricullum_Dev.pdf",
   },
   ctaSecondary: {
     text: "My Projects",
