@@ -31,7 +31,7 @@ export function HeroSection() {
       text: heroData.ctaPrimary.text,
       link: heroData.ctaPrimary.link,
       isDownload: true,
-      download: "Curricullum_Dev.pdf",
+      download: "CurricullumDev.pdf",
     },
   ]
 
